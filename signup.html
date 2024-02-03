@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#verify-otp').click(function() {
+                $('#submit-otp').show();
+                $('#verify-otp').hide();
+            });
+        });
+    </script>
+    <style>
+        a,.btn{
+        background-color:   #93b85d;
+        color: white;
+        padding: 12px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      
+      }
+      a:hover{
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+      }
+      body{
+        background-color:   #e7edde;
+      }
+      h1{
+        font-size: 70px;
+        text-align: center;
+        color: #496421;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center"><b>SIGN UP</b></h1>
+                <br>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" id="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="verify-otp" class="btn">Verify</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="otp">OTP</label>
+                        <input type="text" id="otp" class="form-control" required>
+                    </div>
+                    <a href="homepage.html">Submit</a>
+                </form>
+                <div class="text-center">
+                    <br><br>
+                    <p><h5>Already a user?</h5><br> <a href="login.html">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

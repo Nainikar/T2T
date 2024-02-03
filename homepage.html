@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="homepage.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+
+    
+
+
+
+
+    <!-- header -->
+    <header class="header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdBr5TgvZMl5DvKNSgDbS5oWZwEo9KtADmZg&usqp=CAU" width="100px" height="80px" color="white"  alt="Logo">
+        <h1 class="mainheading">Trash 2 Treasure</h1>
+        <div class="right-links">
+            <a href="bookappointment.html">Book Appointment</a>
+            <a href="faqs.html">FAQ</a>
+            <button id="darkModeToggle">Dark Mode</button>
+            
+                <div class="dropdown">
+                    <button class="dropbtn border-white rounded"><i class="fa-solid fa-user"></i> <i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="recyclinghistory.html">Recycling history</a>
+                        <a href="achievements.html">Achievements</a>
+                        <a href="leaderboard.html">Leaderboard</a>
+                        <a href="feedback.html">Feedback</a>
+                        <a href="login.html">Logout</a>
+                    </div>
+                </div>            
+        </div>
+    </header>
+
+
+
+
+
+    <!-- dark mode -->
+    <script>
+        document.getElementById('darkModeToggle').addEventListener('click', () => {
+          document.body.classList.toggle('dark-mode');
+          const isDarkMode = document.body.classList.contains('dark-mode');
+          localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+        });
+    
+        // Check if dark mode is stored in local storage
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+    
+        // Set initial dark mode state
+        if (isDarkMode) {
+          document.body.classList.add('dark-mode');
+        }
+      </script>
+
+
+
+
+
+
+
+  <br><br>
+    <!-- corousal -->
+    <div class="container mt-4">
+      <!-- Carousel -->
+      <div id="carouselExample" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://scrapq.com/assets/banner2.jpg" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="c1.jpg" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="c2.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+          <div class="carousel-item">
+            <img src="c3.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+      // Initialize the carousel with a 3-second interval
+      $(document).ready(function () {
+        $('.carousel').carousel({
+          interval: 3000 // Set the interval in milliseconds (3 seconds in this case)
+        });
+      });
+    </script>
+
+
+
+
+    <!-- recycle section -->
+    <br><br>
+    <h2>What can we recycle?</h2>
+    <div class="container mt-4">
+        <!-- Button Group -->
+        <div class="btngroup">
+          <button class="btn active" onclick="showCard('card1')" style="background-color: #cbdcb2;">Paper</button>
+          <button  class="btn" onclick="showCard('card2')" style="background-color: #cbdcb2;">Plastic</button>
+          <button  class="btn" onclick="showCard('card3')" style="background-color: #cbdcb2;">Iron</button>
+          <button  class="btn" onclick="showCard('card4')" style="background-color: #cbdcb2;">Steel</button>
+          <button  class="btn" onclick="showCard('card5')" style="background-color: #cbdcb2;">Glass</button>
+          <button  class="btn" onclick="showCard('card6')" style="background-color: #cbdcb2;">Carton</button>
+          <button  class="btn" onclick="showCard('card7')" style="background-color: #cbdcb2;">Aluminium</button>
+          <button  class="btn" onclick="showCard('card8')" style="background-color: #cbdcb2;">CDs</button>
+          <button  class="btn" onclick="showCard('card9')" style="background-color: #cbdcb2;">Copper</button>
+          <button  class="btn" onclick="showCard('card10')" style="background-color: #cbdcb2;" >Cables</button>
+        </div>
+      
+        <!-- Card Container -->
+        <div class="card-container mt-5"></div>
+    </div>
+      
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      
+      <script>
+        // Function to show the selected card
+        function showCard(cardId) {
+          // Define the content for each card
+          const cardContents = {
+            card1: {
+              title: "Paper",
+              text: "Recycling paper is a vital environmental practice, saving trees and reducing waste. Each ton of recycled paper can save approximately 17 trees, 7,000 gallons of water, and significantly cut energy consumption. By recycling paper, we decrease greenhouse gas emissions, conserving resources and contributing to a healthier, more sustainable planet.",
+              imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4oPsWKZ0m8S1L5653L-3nu-K68ULwPQxjoQ&usqp=CAU://via.placeholder.com/150" // Replace with your image URL
+            },
+            card2: {
+              title: "Plastic",
+              text: "Recycling plastic is crucial for curbing environmental impact. One ton of recycled plastic saves around 16.3 barrels of oil, reduces energy consumption by 5,774 kWh, and prevents nearly 30 cubic yards of landfill space. Embracing plastic recycling minimizes pollution, conserves resources, and plays a pivotal role in building a more sustainable future.",
+              imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO4-VCIwWwFyN-2WW4LByDD0nHtYcwuEvidvmJCy8azQpmg1ZIiAncO0npVL37iZii_zk&usqp=CAU" // Replace with your image URL
+            },
+            card3: {
+              title: "Iron",
+              text: "Recycling iron is an energy-efficient solution with significant benefits. Recycling one ton of iron conserves over 2,500 pounds of iron ore, 1,400 pounds of coal, and 120 pounds of limestone. This process reduces greenhouse gas emissions by 58%, emphasizing its pivotal role in sustainable resource management and environmental preservation.",
+              imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJIysDnKfZzoO21oc9KkY-4ZOD4Omw_5rmMGZbS0-Dma6gJAdKspl_evCAYHg46xW_4TY&usqp=CAU" // Replace with your image URL
+            },
+            card4: {
+              title: "Steel",
+              text: "Recycling steel is an environmental triumph. Each ton of recycled steel saves 2,500 pounds of iron ore, 1,400 pounds of coal, and 120 pounds of limestone. Notably, it reduces energy consumption by 74% and decreases air pollution by 86%. Embracing steel recycling contributes significantly to a greener, more sustainable future.",
+              imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBzWmjhLwAm5YqUisqs2Pu_Ln4NUyijuaeL-MAuSJGPMvbEcTpUGZuVG-p-RMpEMKpVg&usqp=CAU" // Replace with your image URL
+            },
+            card5: {
+              title: "Glass",
+              text: "Recycling glass is a sustainable practice with notable impacts. One ton of recycled glass saves 1,300 pounds of sand, 410 pounds of soda ash, and 380 pounds of limestone. Additionally, recycling glass reduces air pollution by 20% and water pollution by 50%, contributing to a cleaner environment and resource conservation.",
+              imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI6r3ahZapEXeQ5fMz4ZXqMmfAoyqjfZ3PC0Qb8o1nmBjVmTkZZdJL3pNN7rDQtb_MX9A&usqp=CAU" // Replace with your image URL
+            },
+            card6: {
+              title: "Carton",
+              text: " Recycling cartons is an eco-friendly choice that conserves resources. One ton of recycled cartons saves 7,000 gallons of water, 3.3 cubic yards of landfill space, and reduces greenhouse gas emissions by 2.5 metric tons. Embracing carton recycling fosters sustainability, mitigates waste, and contributes to a cleaner, healthier environment.",
+              imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4jw7irVqZlMMksVg7WkG0WZHyZRqicXUFCFO8GNQYKf3-4_mJNHmkKplw6WauECHYVjQ&usqp=CAU" // Replace with your image URL
+            },
+            card7: {
+              title: "Aluminium",
+              text: "Aluminium recycling is an eco-friendly powerhouse. Recycling one ton of aluminium saves 14,000 kWh of energy, prevents the extraction of 4 tons of bauxite ore, and reduces greenhouse gas emissions by 95%. This process exemplifies sustainability, as aluminium can be recycled infinitely without compromising its quality.",
+              imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLil9E57Bfyu634xIDjLOrhoqeX8BQk9MhSbrbgqkk8tdsr24c_e7r4Oc93kJX0El-kwY&usqp=CAU" // Replace with your image URL
+            },
+            card8: {
+              title: "CDs",
+              text: "Recycling CDs is essential for mitigating electronic waste. CDs are primarily composed of polycarbonate, a recyclable plastic. Recycling one ton of CDs prevents the emission of approximately 680 kilograms of carbon dioxide and conserves resources. This eco-friendly practice reduces landfill burden, promoting a more sustainable approach to electronic waste management.",
+              imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Zh71E-YGpzWw0-rGKiwXtVBQ1bGCWTEXc5V1ces4nO-5rPYY8dQXy4tDIVEFR5eddPs&usqp=CAU" // Replace with your image URL
+            },
+            card9: {
+              title: "Copper",
+              text: " Recycling copper is an environmentally impactful practice. Recovering and recycling one ton of copper saves energy equivalent to 15,300 kWh, conserves 1.8 tons of raw copper ore, and reduces emissions by 65%. Embracing copper recycling not only preserves natural resources but also significantly decreases the ecological footprint of copper production.",
+              imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMiWby21xLZhzoQtAK_ofirSbeUzSeCfpJIJOHFA7u4yfU9zQXUTvsZuZgM2m1myPfjEU&usqp=CAU" // Replace with your image URL
+            },
+            card10: {
+              title: "Cables",
+              text: "Recycling cables is essential for mitigating electronic waste. A ton of recycled cables prevents the extraction of approximately 1.5 tons of copper ore, conserving energy and reducing environmental impact. With each recycled cable, we contribute to resource conservation, minimize landfill waste, and promote a circular economy for electronic components.",
+              imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsTeFJ21uzyH1QHIKMh5lYM6CACtV_sUctSLhcNm202xXCp59UNMGlqGLWbNnIF5ik_cQ&usqp=CAU" // Replace with your image URL
+            }
+          };
+      
+          // Create HTML for the card with an image on the left
+          const cardHTML = `
+            <div class="card mb-3">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="${cardContents[cardId].imageSrc}" class="card-img" alt="Card Image">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">${cardContents[cardId].title}</h5>
+                    <p class="card-text">${cardContents[cardId].text}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+      
+          // Display the card in the card container
+          $('.card-container').html(cardHTML);
+      
+          // Remove 'active' class from all buttons
+          $('.btn-group button').removeClass('active');
+          
+          // Add 'active' class to the clicked button
+          $(`button[data-card="${cardId}"]`).addClass('active');
+        }
+      
+        // Set the first button as active by default on page load
+        $(document).ready(function () {
+          showCard('card1');
+        });
+      </script>
+
+
+
+
+
+
+    <!-- rewards section -->
+    <br><br>
+    <h2>Rewards</h2>
+    <div class="cards-container">
+      <div class="cards">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfOQUpwR8-C__bHU36gzoEFYVvsklKG8lPfw&usqp=CAU" alt="Image 1">
+          <p>Reusable water bottles are eco-friendly alternatives to single-use plastic. By using a durable stainless steel or glass bottle, an individual can prevent the disposal of approximately 1,460 plastic bottles annually. Making the switch reduces environmental impact, conserves resources, and supports a sustainable, plastic-free future for our planet.</p>
+      </div>
+      <div class="cards">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI9Sr3WXOzlyBvZ0tL7DMicInUdEXKxJuhFw&usqp=CAU" alt="Image 2">
+          <p>Reusable shopping bags are eco-friendly alternatives, reducing plastic pollution. A single reusable bag can replace hundreds of disposable ones, preventing tons of plastic waste annually. With an average lifespan of over 700 uses, these bags significantly cut down environmental impact, conserving resources and promoting sustainable consumer choices.</p>
+      </div>
+      <div class="cards">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxoCBazpxG6FOKAg94X8PRv0ZWaN37YegVfYLScztUdOH8wSCCQpvzxXwzDxdmSQ7ZvAA&usqp=CAU " alt="Image 3">
+          <p>Reusable coffee cups are eco-conscious alternatives, significantly reducing single-use cup waste. Americans alone discard 25 billion coffee cups annually. Opting for reusable cups prevents this environmental toll, with each cup saving thousands of disposables. Made from materials like bamboo or stainless steel, they promote sustainability, reducing plastic pollution and carbon footprint.</p>
+      </div>
+      <div class="cards">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJtOemGiBC5Cnw0t08-31Wc55wKPajqcg1DB12pbA6zZ4FnE0E6guONvUsxfMcQPwD5I&usqp=CAU " alt="Image 4">
+          <p>Bamboo toothbrushes are sustainable alternatives to traditional plastic ones, featuring biodegradable bamboo handles. With over 3.5 billion toothbrushes discarded annually, bamboo toothbrushes combat plastic pollution. Their handles decompose in months, reducing environmental impact. Make a simple switch — one bamboo toothbrush saves multiple plastic ones from entering landfills, supporting a greener planet.</p>
+      </div>
+      <div class="cards">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmeqHzaQXFxI3_-eWjAc6aRwg5GOZBB2Yw_43XwU-7I-zb8Sjksiv60x5RPBMX58-PV1c&usqp=CAU" alt="Image 5">
+          <p>Recycled stationery minimizes environmental impact, using materials crafted from post-consumer or post-industrial waste. Each ton of recycled paper saves approximately 17 trees, conserves 7,000 gallons of water, and reduces energy consumption significantly. Opting for recycled stationery not only supports sustainability but also promotes a circular economy, closing the loop on resource use.</p>
+      </div>
+      <div class="cards">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1BJTAcBFlcjGwpnsfK5BqPbvfUOBZ4Z33sWLn4EgYVXYUVGwUyRbySEu0RjQ5aMYDfKs&usqp=CAU" alt="Image 6">
+          <p>Eco-friendly cleaning products harness the power of nature to enhance cleanliness while minimizing environmental impact. Using plant-based ingredients, these products reduce water pollution and promote sustainability. With biodegradable formulations, they contribute to a significant reduction in plastic waste. Choose green cleaning for a healthier home and planet.</p>
+      </div>
+      <div class="cards">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Ct0NEl3UnTo8wJloPZLTMMheP1TMA4qnOfI5OzQvJHqAv0MI1cXIci-j-U_1-ZNsrlc&usqp=CAU" alt="Image 7">
+          <p>Biodegradable cutlery offers a sustainable alternative to traditional plastic utensils, addressing the global plastic pollution crisis. Crafted from plant-based materials like cornstarch, these utensils decompose naturally, reducing environmental impact. With over 8 million tons of plastic entering oceans annually, making the switch to biodegradable cutlery significantly minimizes plastic waste, supporting a cleaner, healthier planet.</p>
+      </div>
+      <div class="cards">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs_Yd5t8QKJgSsh5koCylYVbxGNQUKhWPHyN861HLbyq4wyosCcr79mhLX9lCfIOs1ZNM&usqp=CAU" alt="Image 8">
+          <p>Transform your space sustainably with recycled home decor. Each upcycled item breathes new life into materials that might otherwise end up in landfills. By choosing recycled decor, you contribute to reducing waste; for instance, using reclaimed wood saves over 1,200 pounds of carbon emissions per square foot. Make a stylish, eco-conscious statement.</p>
+      </div>
+      <div class="cards">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6GcmWr1cwXI7vJpTE4qAgLMJz2w3kzOmM2JIYtSvVkDd4gs4CNeDHPTmlN6DVqOzqAMs&usqp=CAU" alt="Image 9">
+          <p>Planting saplings is a potent tool for environmental restoration. A single tree can absorb up to 48 pounds of carbon dioxide annually, mitigating climate change. Moreover, trees provide oxygen, support biodiversity, and combat soil erosion. Join the green revolution – each sapling planted propels us toward a healthier, more sustainable future.</p>
+      </div>
+    </div>
+
+
+
+
+   <br>
+    <!-- footer -->
+      <div class="footer"> 
+            <div class="col-md-8">
+                <h3>About Us</h3>
+                <p>Welcome to T2T, where sustainability meets simplicity. Discover a world where recycling is rewarded, eco-conscious choices are celebrated, and every user plays a vital role in creating a brighter, more sustainable future. We are on a mission to transform everyday actions into meaningful contributions. Our app seamlessly integrates recycling, eco-friendly rewards, and community engagement, empowering users to make a positive impact on the environment.</p>
+                <br>
+                <h3>Why Us?</h3>
+                <p>Select T2T as your partner in green living. With a focus on user-centric design, seamless functionality, and a commitment to education, we stand out as the app that not only rewards your eco-friendly actions but also empowers you to lead a more sustainable lifestyle. we provide a unique and engaging platform that goes beyond recycling, fostering a lasting commitment to a greener lifestyle.</p>
+            </div>
+            <div class="col-md-3">
+                <br>
+                <h3>Contact Us</h3>
+                <br>
+                <p><i class="fa-solid fa-location-dot"></i> Address: Street no 10, Kukatpally, Hyderabad, Telangana, 500055.</p>
+                <p><i class="fa-brands fa-instagram"></i> Instagram: trash2treasure</p>
+                <p><i class="fa-brands fa-facebook"></i> Facebook: trash2treasure</p>
+                <p><i class="fa-brands fa-twitter"></i> Twitter: trash2treasure</p>
+                <p><i class="fa-solid fa-phone"></i> Ph: 9880098800</p>
+            </div>       
+    </div>
+
+
+
+    <!-- chatbot -->
+    <script>(function(){var js,fs,d=document,id="tars-widget-script",b="https://tars-file-upload.s3.amazonaws.com/bulb/";if(!d.getElementById(id)){js=d.createElement("script");js.id=id;js.type="text/javascript";js.src=b+"js/widget.js";fs=d.getElementsByTagName("script")[0];fs.parentNode.insertBefore(js,fs)}})();window.tarsSettings = {"convid":"72tplU"};</script>
+</body>
+</html>

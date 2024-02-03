@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book an Appointment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 50%;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        body{
+            background-color:   #e7edde;
+        }
+        .confirm{
+            background-color: #b2cc8c;
+            border-radius: 10%;
+            border: 1px 1px rgb(255, 255, 255);
+            display: block;
+            margin: auto;
+        }
+        h1{
+            font-size: 50px;
+            color: #75a135;
+        }
+        h2{
+            color:  #93b85d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="booking-form">
+            <div id="step-1">
+                <h1><b>Book an Appointment</b></h1>
+                <br><br><br><br>
+                <label for="location"><h2>Enter your location:</h2></label>
+                <br>
+                <input type="text" id="location" name="location" required>
+                <br><br><br>
+                <label for="date-time"><h2>Enter the appointment date and time:</h2></label>
+                <br>
+                <input type="datetime-local" id="date-time" name="date-time" required>
+                <br><br>
+                <button class="confirm" type="submit">Confirm</button>
+            </div>
+        </form>
+        <div id="success-message" style="display: none;">
+            <h2>Appointment booked successfully!</h2>
+            <p>Your appointment is booked at:</p>
+            <p id="booked-location"></p>
+            <p id="booked-date-time"></p>
+            <a href="/" class="btn">Exit</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add your code to book the appointment here
+            var location = document.getElementById('location').value;
+            var dateTime = document.getElementById('date-time').value;
+
+            document.getElementById('booked-location').textContent = location;
+            document.getElementById('booked-date-time').textContent = dateTime;
+
+            document.getElementById('step-1').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

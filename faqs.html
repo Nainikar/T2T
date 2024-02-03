@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .answer {
+            display: none;
+            margin-bottom: 1rem;
+        }
+        body{
+            background-color:   #e7edde;
+        }
+        h1{
+            font-size: 70px;
+            color: #5b7d28;
+            text-align: center;
+        }
+        p{
+            font-size: 20px;
+        }
+        h3{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>FAQs</b></h1>
+    <div id="accordion">
+        <h3 class="question">1. How does the app work?</h3>
+        <div class="answer">
+            <p>Our app seamlessly integrates recycling, rewards, and waste collection. Simply sign up, schedule a collection, and earn eco-friendly rewards for your recyclables.</p>
+        </div>
+        <h3 class="question">2. How do I book an appointment for waste collection?</h3>
+        <div class="answer">
+            <p>Booking is easy! Navigate to the "Book an appointment" section, choose a convenient date and time, and confirm your appointment. Our efficient system ensures a hassle-free process for waste pickup.</p>
+        </div>
+        <h3 class="question">3. What kind of recyclable waste can I give for collection?</h3>
+        <div class="answer">
+            <p>We accept various recyclables, including paper, plastic, glass, and metal. Check our home page for a comprehensive list of accepted materials.</p>
+        </div>
+        <h3 class="question">4. Is there a minimum or maximum amount of recyclable waste required for collection?</h3>
+        <div class="answer">
+            <p>No minimum, and we happily accept any amount of recyclables. Whether it's a small batch or a larger collection, we appreciate every effort toward sustainability.</p>
+        </div>
+        <h3 class="question">5. How much money or rewards can I earn for my recyclable waste?</h3>
+        <div class="answer">
+            <p>Your eco-friendly actions earn you rewards! The value depends on the type and quantity of recyclables. Explore the "Rewards" section for exciting incentives.</p>
+        </div>
+        <h3 class="question">6. Can I choose the date and time for the collection appointment?</h3>
+        <div class="answer">
+            <p>Absolutely! Our app allows you to select a date and time that suits your schedule, ensuring a convenient and flexible waste collection experience.</p>
+        </div>
+        <h3 class="question">7. Is there a fee or charge for using the app or the waste collection service?</h3>
+        <div class="answer">
+            <p>No fees! Our app and waste collection service are free to use. We believe in making sustainable practices accessible to all.</p>
+        </div>
+        <h3 class="question">8. How do I know if my recyclable waste is eligible for collection?</h3>
+        <div class="answer">
+            <p>Refer to our "recyclable" section in home page to determine the eligibility of your recyclables.</p>
+        </div>
+        <h3 class="question">9. What happens to the recyclable waste after it is collected?</h3>
+        <div class="answer">
+            <p>Collected waste undergoes eco-friendly processing methods, contributing to recycling efforts. We prioritize sustainable disposal practices to minimize environmental impact.</p>
+        </div>
+        <h3 class="question">10. Can I track the status of my appointment or collection?</h3>
+        <div class="answer">
+            <p>Yes! The app provides real-time updates on your appointment status and the progress of your waste collection, ensuring transparency and peace of mind.</p>
+        </div>
+        <h3 class="question">11. How long does it take for the collector to arrive after booking an appointment?</h3>
+        <div class="answer">
+            <p>Typically, our collectors aim to arrive promptly within the chosen time slot. Delays are minimal, ensuring a timely and efficient waste collection process.</p>
+        </div>
+        <h3 class="question">12. Can I cancel or reschedule my appointment?</h3>
+        <div class="answer">
+            <p>Certainly! The app allows you to manage your appointments. Cancel or reschedule with ease, ensuring flexibility to accommodate your changing schedule.</p>
+        </div>
+        <h3 class="question">13. Is there a limit on the number of appointments I can book?</h3>
+        <div class="answer">
+            <p>No limits! Feel free to book as many appointments as needed. We're here to support your commitment to sustainable living.</p>
+        </div>
+        <h3 class="question">14. Is the service available in all areas?</h3>
+        <div class="answer">
+            <p>We strive to expand our service coverage continuously. Check the app for the most up-to-date information on available service areas.</p>
+        </div>
+        <h3 class="question">15. How can I provide feedback or report any issues with the app or the waste collection service?</h3>
+        <div class="answer">
+            <p>Your feedback is valuable! Visit the "Contact Us" section in the app to share your thoughts, report issues, or inquire about any concerns. We're dedicated to enhancing your experience.</p>
+        </div>
+
+        <!-- Add more questions and answers in the same format as above -->
+    </div>
+
+    <script>
+        const accordion = document.getElementById('accordion');
+
+        accordion.addEventListener('click', (event) => {
+            if (event.target.classList.contains('question')) {
+                const answer = event.target.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    </script>
+</body>
+</html>
